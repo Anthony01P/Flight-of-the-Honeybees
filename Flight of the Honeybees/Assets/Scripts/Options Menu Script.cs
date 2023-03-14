@@ -15,4 +15,39 @@ public class OptionsMenuScript : MonoBehaviour
     {
         
     }
+
+    public void masterVolume()
+    {
+
+    }
+
+    public void musicVolume()
+    {
+
+    }
+
+    public void sfxVolume()
+    {
+
+    }
+
+    public void FOV()
+    {
+
+    }
+
+    public void textSize()
+    {
+
+    }
+
+    public void lighting()
+    {
+
+    }
+
+    public void shadow()
+    {
+
+    }
 }

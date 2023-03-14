@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
@@ -16,12 +17,12 @@ public class MainMenuScript : MonoBehaviour
         
     }
 
-    public void StartGame()
+    public void StartButton()
     {
-        
+        SceneManager.LoadScene("SampleScene");
     }
 
-    public void ExitButton()
+    public void QuitButton()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
