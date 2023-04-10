@@ -23,7 +23,7 @@ public class PollenTracker : MonoBehaviour
             if(col.tag == "Pollen")
             {
                 pollenCount += 1;
-                col.gameObject.SetActive(false);
+                col.gameObject.tag = "Haversted";
             text.text = "Pollen Count = " + pollenCount;
             }
         }
