@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuScript : MonoBehaviour
+public class StageCompleteMenu : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,17 +17,14 @@ public class MainMenuScript : MonoBehaviour
         
     }
 
-    public void StartButton()
+    public void NextStageButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("");
     }
 
-    public void QuitButton()
+    public void ExitStageButton()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+        SceneManager.LoadScene("Main Menu");
     }
+
 }
