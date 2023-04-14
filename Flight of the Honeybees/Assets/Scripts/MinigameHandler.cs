@@ -4,26 +4,33 @@ using UnityEngine;
 
 public class MinigameHandler : MonoBehaviour
 {
+    //Image GameObject
     public GameObject collected;
+    //Collection of images for the "collected" object
     public Texture[] images;
-    public CanvasRenderer renderer;
+    //Renderer of "collected" object
+    public CanvasRenderer tRenderer;
+    //Objective Variable
     public int flowers;
+
     // Start is called before the first frame update
     void Start()
     {
-        renderer = collected.GetComponent<CanvasRenderer>();
+        //Assignment of Canvas Renderer to tRenderer
+        tRenderer = collected.GetComponent<CanvasRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Checks for the current objective count and updates image according to value
         switch (flowers)
         {
-            case 1: renderer.SetTexture(images[0]); break;
-            case 2: renderer.SetTexture(images[1]); break;
-            case 3: renderer.SetTexture(images[2]); break;
-            case 4: renderer.SetTexture(images[3]); break;
-            default: renderer.SetTexture(images[4]); break;
+            case 1: tRenderer.SetTexture(images[0]); break;
+            case 2: tRenderer.SetTexture(images[1]); break;
+            case 3: tRenderer.SetTexture(images[2]); break;
+            case 4: tRenderer.SetTexture(images[3]); break;
+            default: tRenderer.SetTexture(images[4]); break;
         }
     }
 }
