@@ -14123,8 +14123,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7537328029513722201, guid: c171b7a78466f304eaba3fa13836746f,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537328029513722201, guid: c171b7a78466f304eaba3fa13836746f,
+        type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0025503698
+      value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: 7537328029513722201, guid: c171b7a78466f304eaba3fa13836746f,
         type: 3}
@@ -14139,7 +14144,7 @@ PrefabInstance:
     - target: {fileID: 7537328029513722201, guid: c171b7a78466f304eaba3fa13836746f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.25
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7537328029513722201, guid: c171b7a78466f304eaba3fa13836746f,
         type: 3}
@@ -33485,7 +33490,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 744118332d4c7d9479b6de192050497b, type: 3}
   - {fileID: 2800000, guid: c49258227ec8e5346816e229f125010f, type: 3}
   - {fileID: 2800000, guid: 9488280794b5ef549bc85425551a2382, type: 3}
-  renderer: {fileID: 0}
+  tRenderer: {fileID: 0}
   flowers: 0
 --- !u!4 &1774834865
 Transform:

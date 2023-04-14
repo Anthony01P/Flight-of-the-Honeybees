@@ -14,6 +14,7 @@ public class ObjectiveMarkerScript : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        //Forced the UI of the Canvas w/ this script to constantly face the camera
         transform.LookAt(transform.position + Camera.current.transform.rotation * Vector3.forward, Camera.current.transform.rotation * Vector3.up);
     }
 }
