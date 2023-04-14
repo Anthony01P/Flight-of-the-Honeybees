@@ -5,25 +5,25 @@ using UnityEngine;
 public class MinigameHandler : MonoBehaviour
 {
     public GameObject collected;
-    public SpriteRenderer spriteRender;
-    public Sprite[] sprites;
-    public int pollen;
+    public Texture[] images;
+    public CanvasRenderer renderer;
+    public int flowers;
     // Start is called before the first frame update
     void Start()
     {
-        spriteRender = collected.GetComponent<SpriteRenderer>();
+        renderer = collected.GetComponent<CanvasRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (pollen)
+        switch (flowers)
         {
-            case 1: spriteRender.sprite = sprites[0]; break;
-            case 2: spriteRender.sprite = sprites[1]; break;
-            case 3: spriteRender.sprite = sprites[2]; break;
-            case 4: spriteRender.sprite = sprites[3]; break;
-            default: spriteRender.sprite = sprites[4]; break;
+            case 1: renderer.SetTexture(images[0]); break;
+            case 2: renderer.SetTexture(images[1]); break;
+            case 3: renderer.SetTexture(images[2]); break;
+            case 4: renderer.SetTexture(images[3]); break;
+            default: renderer.SetTexture(images[4]); break;
         }
     }
 }
