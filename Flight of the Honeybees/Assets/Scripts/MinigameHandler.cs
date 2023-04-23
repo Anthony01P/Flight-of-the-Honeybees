@@ -1,57 +1,83 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MinigameHandler : MonoBehaviour
 {
-    //Image GameObject
-    public GameObject collectedImage;
-    //Page 1 of Journal Object
-    public GameObject page1;
-    //Page 2 of Journal Object
-    public GameObject page2;
-    //Page 3 of Journal Object
-    public GameObject page3;
-    //Page 4 of Journal Object
-    public GameObject page4;
-    //Collection of images for the "collected" object
-    public Texture[] images;
-    //Renderer of "collected" object
-    public CanvasRenderer tRenderer;
     //Objective Variable
-    public int pollen;
+    public int flowers;
+    public GameObject[] flowerBeds;
+    public GameObject[] arrow;
+
+    public GameObject noFlower;
+    public GameObject oneFlower;
+    public GameObject twoFlower;
+    public GameObject threeFlower;
+    public GameObject fourFlower;
 
     // Start is called before the first frame update
     void Start()
     {
         //Assignment of Canvas Renderer to tRenderer
-        tRenderer = collectedImage.GetComponent<CanvasRenderer>();
-        //page1.SetActive(true);
+        //tRenderer = collected.GetComponent<CanvasRenderer>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         //Checks for the current objective count and updates image according to value
-        switch (pollen)
+        CheckFlowerCount();
+        if (flowers >= 4)
         {
-            case 1: tRenderer.SetTexture(images[0]); break;
-            case 2: tRenderer.SetTexture(images[1]); break;
-            case 3: tRenderer.SetTexture(images[2]); break;
-            case 4: tRenderer.SetTexture(images[3]); break;
-            default: tRenderer.SetTexture(images[4]); break;
+            foreach (GameObject i in flowerBeds)
+            {
+                i.tag = "Collected";
+            }
+            foreach (GameObject i in arrow)
+            {
+                i.SetActive(false);
+            }
         }
     }
-
-    private void OnTriggerEnter(Collider other)
+    public void CheckFlowerCount()
     {
-        if (this.gameObject.name == "Page2Trigger")
+        if(GameObject.FindGameObjectsWithTag("Collected").Length == 1)
         {
-            other.gameObject.SetActive(false);
-            if (pollen == 0)
-            {
-                page2.gameObject.SetActive(true);
-            }
+            flowers = 1;
+            noFlower.SetActive(false);
+            oneFlower.SetActive(true);
+            twoFlower.SetActive(false);
+            threeFlower.SetActive(false);
+            fourFlower.SetActive(false);
+        }
+        else if (GameObject.FindGameObjectsWithTag("Collected").Length == 2)
+        {
+            flowers = 2;
+            noFlower.SetActive(false);
+            oneFlower.SetActive(false);
+            twoFlower.SetActive(true);
+            threeFlower.SetActive(false);
+            fourFlower.SetActive(false);
+        }
+        else if (GameObject.FindGameObjectsWithTag("Collected").Length == 3)
+        {
+            flowers = 3;
+            noFlower.SetActive(false);
+            oneFlower.SetActive(false);
+            twoFlower.SetActive(false);
+            threeFlower.SetActive(true);
+            fourFlower.SetActive(false);
+        }
+        else if (GameObject.FindGameObjectsWithTag("Collected").Length >= 4)
+        {
+            flowers = 4;
+            noFlower.SetActive(false);
+            oneFlower.SetActive(false);
+            twoFlower.SetActive(false);
+            threeFlower.SetActive(false);
+            fourFlower.SetActive(true);
         }
     }
 }

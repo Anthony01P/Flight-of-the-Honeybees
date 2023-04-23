@@ -3,31 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class MainMenuScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public GameObject optionsMenu;
+    public GameObject mainMenu;
     public void StartButton()
     {
-        SceneManager.LoadScene("PollenMinigame");
+        SceneManager.LoadScene(1);
     }
-
+    public void OptionsButton()
+    {
+        optionsMenu.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+    public void BackButton()
+    {
+        optionsMenu.SetActive(false);
+        mainMenu.SetActive(true);
+    }
     public void QuitButton()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+        Debug.Log("The Game has been Quit.");
+        Application.Quit();
     }
 }
