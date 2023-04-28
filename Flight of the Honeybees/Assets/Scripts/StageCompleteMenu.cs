@@ -19,12 +19,19 @@ public class StageCompleteMenu : MonoBehaviour
 
     public void NextStageButton()
     {
-        SceneManager.LoadScene("");
+        //For when the next scene is made
+        //SceneManager.LoadScene("");
     }
 
     public void ExitStageButton()
     {
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void StageSelectButton()
+    {
+        //For when Stage Select is ever implemented
+        //SceneManager.LoadScene("");
     }
 
 }

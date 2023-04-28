@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ObjectiveMarkerScript : MonoBehaviour
 {
-    //Camera of the player
+
     public Camera playerCamera;
+
     // Start is called before the first frame update
     void Start()
     {
