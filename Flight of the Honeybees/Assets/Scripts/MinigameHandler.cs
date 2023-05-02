@@ -20,8 +20,8 @@ public class MinigameHandler : MonoBehaviour
     public GameObject Page3Button;
     public GameObject Page4;
     public GameObject Page4Button;
-    //public GameObject noFlower;
-    //public GameObject oneFlower;
+    //public GameObject noFlower;       //UI is a single object, so I replace the texture of the image
+    //public GameObject oneFlower;      //object instead of turning an image off and on.
     //public GameObject twoFlower;
     //public GameObject threeFlower;
     //public GameObject fourFlower;
@@ -56,24 +56,29 @@ public class MinigameHandler : MonoBehaviour
                 timer = 0;
                 count++;
                 timerIsRunning = false;
+                //If Page1 is active on the player obj, activate its button
                 if (Page1.activeInHierarchy)
                 {
                     Page1Button.SetActive(true);
                 }
+                //If Page2 is active on the player obj, activate its button
                 if (Page2.activeInHierarchy)
                 {
                     Page2Button.SetActive(true);
                 }
+                //If Page3 is active on the player obj, activate its button
                 if (Page3.activeInHierarchy)
                 {
                     Page3Button.SetActive(true);
                 }
+                //If Page4 is active on the player obj, activate its button
                 if (Page4.activeInHierarchy)
                 {
                     Page4Button.SetActive(true);
                 }
             }
         }
+        //After Page1 is inactive, activate Page2
         if (!Page1.activeInHierarchy && count == 1)
         {
             Page2.SetActive(true);
