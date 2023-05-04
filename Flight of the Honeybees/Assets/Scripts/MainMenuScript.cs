@@ -6,11 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
-    public void StartButton()
+    //Start Button on Main Menu
+    public void StartButton1()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    //Start Button on Tutorial
+    public void StartButton2()
     {
         SceneManager.LoadScene(1);
     }
-    
+
     public void QuitButton()
     {
         Debug.Log("The Game has been Quit.");

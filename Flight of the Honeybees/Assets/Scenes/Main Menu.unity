@@ -1169,7 +1169,7 @@ PrefabInstance:
     - target: {fileID: 1259877991906121813, guid: cb91f8e887098b84185e90782a98a9cf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartButton
+      value: StartButton1
       objectReference: {fileID: 0}
     - target: {fileID: 1259877991906121813, guid: cb91f8e887098b84185e90782a98a9cf,
         type: 3}
